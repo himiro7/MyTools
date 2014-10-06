@@ -6,27 +6,35 @@ using System.Text;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Prism.Commands;
 using BaseControls.ViewModel;
+using MyTools.Function01;
 using MyTools.Function0A;
 
 namespace MyTools
 {
-  class MainWindowViewModel : MainViewModel
+  public class MainWindowViewModel : MainViewModel
   {
     public MainWindowViewModel()
     {
-      Function01 = new Function0AViewModel();
-
       TestText = "AAA";
+      Function0A = new Function0AViewModel();
     }
 
-    private Function0AViewModel _Function01;
-    public Function0AViewModel Function01
+    protected override void OnNew()
     {
-      get { return _Function01; }
+      //base.OnNew();
+
+      _Files.Add(new Function01Holder(this));
+      ActiveDocument = _Files.Last();
+    }
+
+    private Function0AViewModel _Function0A;
+    public Function0AViewModel Function0A
+    {
+      get { return _Function0A; }
       set
       {
-        _Function01 = value;
-        RaisePropertyChanged(() => Function01);
+        _Function0A = value;
+        RaisePropertyChanged(() => Function0A);
       }
     }
   }

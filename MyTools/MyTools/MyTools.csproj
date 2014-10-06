@@ -91,6 +91,7 @@
     <Compile Include="Function01\Function01View.xaml.cs">
       <DependentUpon>Function01View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Function01\Function01Holder.cs" />
     <Compile Include="Function01\Function01ViewModel.cs" />
     <Compile Include="Function0A\Function0AView.xaml.cs">
       <DependentUpon>Function0AView.xaml</DependentUpon>

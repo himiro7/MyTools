@@ -14,15 +14,6 @@
              d:DesignHeight="400" d:DesignWidth="600">
   <UserControl.Resources>
     <conv:ActiveDocumentConverter x:Key="ActiveDocumentConverter" />
-    
-    <DataTemplate DataType="{x:Type vm:DocViewModel}">
-      <ContentControl Content="{Binding Path=MyTestView}" />
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type layout:LayoutDocument}" >
-      <ContentControl Content="{Binding Path=MyTestView}" />
-    </DataTemplate>
-
   </UserControl.Resources>
   <Grid>
     <avalonDock:DockingManager x:Name="dockManager"                               
@@ -43,8 +34,7 @@
         <pane:PanesTemplateSelector>
           <pane:PanesTemplateSelector.DocViewTemplate>
             <DataTemplate>
-              <TextBox Text="{Binding Path=TextContent, UpdateSourceTrigger=PropertyChanged}" />
-              <!--<TextBox Text="{Binding Path=TextContext}" />-->
+              <ContentControl Content="{Binding Path=MyContent}" />
             </DataTemplate>
           </pane:PanesTemplateSelector.DocViewTemplate>
         </pane:PanesTemplateSelector>
@@ -74,7 +64,7 @@
           <layout:LayoutAnchorablePaneGroup Orientation="Horizontal" DockWidth="100">
             <layout:LayoutAnchorablePane>
               <layout:LayoutAnchorable Title="text1" ContentId="text1" >
-                <ContentControl Content="{Binding Path=Function01}" />
+                <ContentControl Content="{Binding Path=Function0A}" />
               </layout:LayoutAnchorable>
 
             </layout:LayoutAnchorablePane>

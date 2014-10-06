@@ -45,7 +45,7 @@ namespace BaseControls.ViewModel
     //}
 
     //--------------------------------
-    ObservableCollection<DocViewModel> _Files = new ObservableCollection<DocViewModel>();
+    protected ObservableCollection<DocViewModel> _Files = new ObservableCollection<DocViewModel>();
     ReadOnlyObservableCollection<DocViewModel> _ReadOnlyFiles = null;
     public ReadOnlyObservableCollection<DocViewModel> Files
     {
@@ -67,7 +67,7 @@ namespace BaseControls.ViewModel
       }
     }
 
-    private void OnNew()
+    protected virtual void OnNew()
     {
       _Files.Add(new DocViewModel(this));
       ActiveDocument = _Files.Last();
